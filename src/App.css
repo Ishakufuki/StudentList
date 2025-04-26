@@ -1,0 +1,34 @@
+#student- list-page{
+  padding: 20px;
+}
+
+table{
+  border: 1px solid blue;
+  width: 500px;
+  border-collapse: collapse;
+}
+td{
+  border: 1px solid blue;
+  padding: 8px;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  gap: 10px;
+}
+input{
+  padding-inline: 20px;
+  padding-block: 10px;
+}
+#submit-btn{
+  padding-inline: 20px;
+  padding-block: 10px;
+  background-color: rebeccapurple;
+  color: white;
+  border: none;
+}
+section{
+  margin-bottom: 20px;
+}
+
