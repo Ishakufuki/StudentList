@@ -1,4 +1,4 @@
-import { eventWrapper } from '@testing-library/user-event/dist/utils';
+// import { eventWrapper } from '@testing-library/user-event/dist/utils';
 import React, { useEffect, useState } from 'react'
 function StudentList(){
 const [studName, setStudName] = useState('');
@@ -8,7 +8,7 @@ const [studlist, setStudList] =useState([]);
 const handleCreate = async (event)=>{
     event.preventDefault();
     try {
-        const response = await fetch('http://localhost:3010/student',{
+        const response = await fetch(process.env.REACT_APP_SERVER_URL+'/student',{
             method:'POST',
             headers:{
                 "content-Type":"application/json"
@@ -29,10 +29,10 @@ const handleCreate = async (event)=>{
     }
 };
 
-const handleDelete =()=>{};
+// const handleDelete =()=>{};
 const getStudentList = async () =>{
     try {
-        const response = await fetch('http://localhost:3010/student-list');
+        const response = await fetch(process.env.REACT_APP_SERVER_URL+'/student-list');
         if(!response.ok){
             throw new Error('failed to fetch student list');
         }
@@ -50,6 +50,7 @@ getStudentList();
     return(
         <div id="student-list-page">
             <h1>student list</h1>
+            
             <section>
                 <form onSubmit={handleCreate}>
                     <input placeholder="name e.g john doe"
